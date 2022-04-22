@@ -15,11 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class WelcomeController {
 
-	@GetMapping("/")
-	public String showRootPage(ModelMap model) {
-		return "index";
-	}
-
 	@GetMapping("/index")
 	public String showWelcomePage(@RequestParam String name, ModelMap model) {
 		return "index";
