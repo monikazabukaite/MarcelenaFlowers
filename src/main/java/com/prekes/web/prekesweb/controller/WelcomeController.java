@@ -14,34 +14,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 // MVC controller
 @Controller
 public class WelcomeController {
-	
-	// GET request
-	// http://localhost:8080
-	//@RequestMapping(value = "/", method= RequestMethod.GET)
+
 	@GetMapping("/")
 	public String showRootPage(ModelMap model) {
-		// put value "ANONYMOUS" to model variable "name"
-		// this model is passed to view
-		model.put("name", "ANONYMOUS");
-		return "welcome"; // view resolver /WEB-INF/jsp/welcome.jsp
+		return "index";
 	}
-	
-	// GET request with parameter name = Jonas
-	// http://localhost:8080/welcome?name=Jonas
-	@GetMapping("/welcome")
+
+	@GetMapping("/index")
 	public String showWelcomePage(@RequestParam String name, ModelMap model) {
-		// method parameter name which gets value of parameter in request URI has annotation @RequestParam
-		// put value of name from request parameter to model variable "name"
-		// this model is passed to view
-		model.put("name", name);
-		return "welcome"; // view resolver /WEB-INF/jsp/welcome.jsp
-	}
-	
-	// GET request
-	// http://localhost:8080/welcomeResponseBody
-	@GetMapping("/welcomeResponseBody") 			
-	@ResponseBody
-	public String showWelcomeResponseBodyPage() {
-		return "Laba diena su vištiena."; // not view resolver, return plain text
+		return "index";
 	}
 }

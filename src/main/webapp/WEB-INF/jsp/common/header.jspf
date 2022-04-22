@@ -4,7 +4,10 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <style>
     .section-title span {
@@ -53,9 +56,96 @@
     #hero {
         width: 100%;
         height: 250px;
-        background: #191919;
+        background: #D7B5A9;
         background-size: cover;
         position: relative;
     }
+
+    .card {
+        margin-right: 2em;
+        border: none;
+    }
+
+    .card-body {
+        padding-left: 0px;
+    }
+
+    .card-title {
+        color: #000;
+        font-family: 'Playfair Display';
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: -0.4px;
+    }
+
+    .card-text {
+        color: #000;
+        font-family: 'Playfair Display';
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 28px;
+        letter-spacing: -0.4px;
+    }
+
+    .categories {
+        color: #000;
+        font-family: 'Playfair Display';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: -0.4px;
+    }
+
+    .card-img-top {
+        width: 258px;
+        height: 315px;
+        left: 1007px;
+        top: 424px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #D7B5A9 !important;
+    }
+
+    .card-a:hover .card-text {
+        color: #D7B5A9 !important;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    }
+
+    .card-a:hover .card-title {
+        color: #D7B5A9 !important;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        justify-content: center;
+        margin-right: 1% !important;
+    }
+
+    .me-auto {
+        margin-right: 0;
+    }
+
+    .nav-a {
+        color: #000;
+        font-family: 'Playfair Display';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: -0.4px;
+    }
+
+    body {
+        font-family: 'Playfair Display';
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: -0.4px;
+    }
+
 </style>
 <body>

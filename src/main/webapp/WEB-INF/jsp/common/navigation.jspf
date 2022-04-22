@@ -1,20 +1,20 @@
-<nav role="navigation" class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: black !important;">
-    <div class="container-fluid" style="max-width: 80%">
-        <a class="navbar-brand" href="/">Marcelena v6</a>
+<nav role="navigation" class="navbar navbar-expand-lg" style="background-color: white !important;">
+    <div class="container-fluid" style="max-width: 69%">
+        <a class="navbar-brand" href="/" style="font-family: 'Playfair Display'; color: #000; font-size: 20px; font-weight: 800; line-height: 26px; letter-spacing: -0.6px">Blossom</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/shop">Shop</a>
+                    <a class="nav-link nav-a" aria-current="page" href="/about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/about">About</a>
+                    <a class="nav-link nav-a" aria-current="page" href="/shop">Shop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/contact">Contact</a>
+                    <a class="nav-link nav-a" aria-current="page" href="/contact">Contact</a>
                 </li>
             </ul>
         </div>

@@ -1,7 +1,6 @@
-<%@ include file="common/header.jspf" %>
-<%@ include file="common/navigation.jspf" %>
-
-<div class="container" style="margin-top: 2%;">
+<%@ include file="common/header.jspf"%>
+<%@ include file="common/navigation.jspf"%>
+<div class="container" style="margin-top: 2%">
     <div class="section-title">
         <span>About us</span>
         <h2>About us</h2>
@@ -95,4 +94,4 @@
         </div>
     </div>
 </div>
-<%@ include file="common/footer.jspf" %>
+<%@ include file="common/footer.jspf"%>

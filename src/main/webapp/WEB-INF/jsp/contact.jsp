@@ -8,27 +8,27 @@
     </div>
     <div class="row">
         <div class="col-md-6" style="float: left;">
-            <h3>Members:</h3>
+            <h2 style="margin-top: 4%;margin-bottom: 4%;">Members:</h2>
             <p>Mantas Jakaitis - Project Lead</p>
             <p>Jokubas Jurkys - Project Lead</p>
             <p>Dominykas Daunoravicius - Project Lead</p>
             <p>Goda Jurcikonyte - Project Lead</p>
             <p>Monika Zabukaite - Project Lead</p>
-            <h3>Working hours:</h3>
+            <h2 style="margin-top: 4%;margin-bottom: 4%;">Working hours:</h2>
             <p>Mon - Fri</p>
             <p>Saturday</p>
             <p>Sunday</p>
-            <h3>Where to find us:</h3>
+            <h2 style="margin-top: 4%;margin-bottom: 4%;">Where to find us:</h2>
         </div>
         <div class="col-md-6" style="float: right;">
-            <h3>Contact information:</h3>
+            <h2 style="margin-top: 4%;margin-bottom: 4%;">Contact information:</h2>
             <div style="padding-left: 12%">
                 <p>+370 648 29 671</p>
                 <p>+370 648 29 671</p>
                 <p>+370 648 29 671</p>
                 <p>+370 648 29 671</p>
                 <p>+370 648 29 671</p>
-                <h3>&nbsp;</h3>
+                <h2 style="margin-top: 4%;margin-bottom: 4%;">&nbsp;</h2>
                 <p>8AM - 7PM</p>
                 <p>9AM - 5PM</p>
                 <p>11AM - 3PM</p>
