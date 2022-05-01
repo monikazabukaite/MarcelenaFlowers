@@ -27,7 +27,7 @@
 
     <div class="row" style="margin-left: 2%;">
         <div class="card col-md-3" style="width: 18rem;">
-            <a class="card-a" href="#">
+            <a class="card-a" href="/item">
                 <img src="images/flower1.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">The Ellen</h5>
