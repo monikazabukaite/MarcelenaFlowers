@@ -322,7 +322,7 @@
   white-space: nowrap;
 }
 
-.not-ready-to-checkou {
+.not-ready-to-checkout {
   color: var(--black);
   font-family: var(--font-family-playfair_display);
   font-size: var(--font-size-xl);
