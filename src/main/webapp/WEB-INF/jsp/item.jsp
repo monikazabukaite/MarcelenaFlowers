@@ -21,14 +21,20 @@
                     <input type="button" value="+" class="button-plus" data-field="quantity">
                 </div>
                 <div class="buygroup">
-                    <form id="thisone" action="cart" method="post">
+                    <a href="/cart">
                         <input type="submit"  class="button-addtocart" value="Add to Cart" >
-                    </form>
+                    </a>
+<%--                    <form id="thisone" action="cart" method="post">--%>
+<%--                        <input type="submit"  class="button-addtocart" value="Add to Cart" >--%>
+<%--                    </form>--%>
                 </div>
                 <div class="buygroup">
-                    <form id="thistoo" action="checkout" method="post">
-                        <input type="submit"  class="button-buynow"  value="Buy Now" >
-                    </form>
+                    <a href="/checkout">
+                        <input type="submit"  class="button-buynow"  value="Buy Now">
+                    </a>
+<%--                    <form id="thistoo" action="checkout" method="post">--%>
+<%--                        <input type="submit"  class="button-buynow"  value="Buy Now" >--%>
+<%--                    </form>--%>
                 </div>
             </a>
         </div>
