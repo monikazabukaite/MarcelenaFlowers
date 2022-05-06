@@ -13,27 +13,11 @@
     </div>
     <div class="flex-row-2">
         <div class="flex-col-3">
-            <div class="input-payment">
-                <div class="input-name valign-text-middle">PayPal</div>
-            </div>
-            <div class="input-payment">
-                <div class="input-name valign-text-middle">Apple Pay</div>
-            </div>
-            <div class="input">
-                <div class="input-name valign-text-middle">Cardholder Name</div>
-            </div>
-            <div class="input">
-                <div class="input-name valign-text-middle">Card Number</div>
-            </div>
-            <div class="input">
-                <div class="input-name valign-text-middle">Month</div>
-            </div>
-            <div class="input">
-                <div class="input-name valign-text-middle">Year</div>
-            </div>
-            <div class="input">
-                <div class="input-name valign-text-middle">CVC</div>
-            </div>
+            <input placeholder="Cardholder Name" class="input-name valign-text-middle input"/>
+            <input placeholder="Card Number" class="input-name valign-text-middle input"/>
+            <input placeholder="Month" class="input-name valign-text-middle input"/>
+            <input placeholder="Year" class="input-name valign-text-middle input"/>
+            <input placeholder="CVC" class="input-name valign-text-middle input"/>
 
             <label class="container subtotal playfairdisplay-normal-woodsmoke-15px">Save card data for future payments
                 <input type="checkbox">
@@ -42,25 +26,26 @@
 
             <div class="default">
                 <div class="overlap-group-1">
-                    <div class="button-text">Continue</div>
+                    <div class="button-text">
+                        <a href="/delivery/${item.id}/1" style="color: #fff;">Continue</a>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="flex-col-1">
-            <img class="x36c4577975feb4cb36f6b7bd052c8845-1" src="images/flower1.jpg"/>
-            <img class="last-weeks-flowers-f" src="images/flower2.jpg"/>
+            <img class="x36c4577975feb4cb36f6b7bd052c8845-1" src="../../${item.imgUrl}"/>
+<%--            <img class="last-weeks-flowers-f" src="images/flower2.jpg"/>--%>
         </div>
         <div class="flex-col-2">
-            <div class="the-charlie playfairdisplay-semi-bold-black-20px">The Charlie</div>
-            <div class="quantity-1 playfairdisplay-normal-black-14px">Quantity 1</div>
-            <div class="price valign-text-middle playfairdisplay-normal-black-20px">$49</div>
-            <div class="the-frances playfairdisplay-semi-bold-black-20px">The Frances</div>
-            <div class="quantity-1-1playfairdisplay-normal-black-14px">Quantity 1</div>
-            <div class="price-1 valign-text-middle playfairdisplay-normal-black-20px">$59</div>
+            <div class="the-charlie playfairdisplay-semi-bold-black-20px">${item.name}</div>
+            <div class="quantity-1 playfairdisplay-normal-black-14px">Quantity ${quantity}</div>
+            <div class="price valign-text-middle playfairdisplay-normal-black-20px">$${item.price}</div>
+<%--            <div class="the-frances playfairdisplay-semi-bold-black-20px">The Frances</div>--%>
+<%--            <div class="quantity-1-1playfairdisplay-normal-black-14px">Quantity 1</div>--%>
+<%--            <div class="price-1 valign-text-middle playfairdisplay-normal-black-20px">$59</div>--%>
         </div>
         <div class="remove-container">
             <div class="remove playfairdisplay-normal-black-14px">Remove</div>
-            <div class="remove-1 playfairdisplay-normal-black-14px">Remove</div>
         </div>
     </div>
 </div>

@@ -19,87 +19,32 @@
     </ul>
 
     <div class="row" style="margin-left: 2%;">
-        <div class="card col-md-3" style="width: 18rem;">
-            <a class="card-a" href="/item">
-                <img src="images/flower1.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">The Ellen</h5>
-                    <p class="card-text">$49</p>
-                </div>
-            </a>
-        </div>
-
-        <div class="card col-md-3" style="width: 18rem;">
-            <a class="card-a" href="#">
-                <img src="images/flower2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">The Millie</h5>
-                    <p class="card-text">$39</p>
-                </div>
-            </a>
-        </div>
-
-        <div class="card col-md-3" style="width: 18rem;">
-            <a class="card-a" href="#">
-                <img src="images/flower3.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">The Abby</h5>
-                    <p class="card-text">$59</p>
-                </div>
-            </a>
-        </div>
-
-        <div class="card col-md-3" style="width: 18rem;">
-            <a class="card-a" href="#">
-                <img src="images/flower4.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">The Jeanie</h5>
-                    <p class="card-text">$59</p>
-                </div>
-            </a>
-        </div>
+        <c:forEach begin="0" end="3" items="${itemsList}" var="item">
+            <div class="card col-md-3" style="width: 18rem;">
+                <a class="card-a" href="/item/${item.id}">
+                    <img src="${item.imgUrl}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${item.name}</h5>
+                        <p class="card-text">$${item.price}</p>
+                    </div>
+                </a>
+            </div>
+        </c:forEach>
     </div>
 
     <div class="row" style="margin-left: 2%;">
-        <div class="card col-md-3" style="width: 18rem;">
-            <a class="card-a" href="/item">
-                <img src="images/flower1.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">The Ellen</h5>
-                    <p class="card-text">$49</p>
-                </div>
-            </a>
-        </div>
-
-        <div class="card col-md-3" style="width: 18rem;">
-            <a class="card-a" href="#">
-                <img src="images/flower2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">The Millie</h5>
-                    <p class="card-text">$39</p>
-                </div>
-            </a>
-        </div>
-
-        <div class="card col-md-3" style="width: 18rem;">
-            <a class="card-a" href="#">
-                <img src="images/flower3.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">The Abby</h5>
-                    <p class="card-text">$59</p>
-                </div>
-            </a>
-        </div>
-
-        <div class="card col-md-3" style="width: 18rem;">
-            <a class="card-a" href="#">
-                <img src="images/flower4.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">The Jeanie</h5>
-                    <p class="card-text">$59</p>
-                </div>
-            </a>
-        </div>
+        <c:forEach begin="4" end="7" items="${itemsList}" var="item">
+            <div class="card col-md-3" style="width: 18rem;">
+                <a class="card-a" href="/item/${item.id}">
+                    <img src="${item.imgUrl}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${item.name}</h5>
+                        <p class="card-text">$${item.price}</p>
+                    </div>
+                </a>
+            </div>
+        </c:forEach>
     </div>
+
 </div>
 <%@ include file="common/footer.jspf" %>
