@@ -17,7 +17,7 @@
                 <p class="item-price">$49</p>
                 <div class="input-group">
                     <input type="button" value="-" class="button-minus" data-field="quantity">
-                    <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
+                    <input type="number" step="1" max="10" value="1" name="quantity" class="quantity-field">
                     <input type="button" value="+" class="button-plus" data-field="quantity">
                 </div>
                 <div class="buygroup">
