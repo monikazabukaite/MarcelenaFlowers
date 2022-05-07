@@ -163,7 +163,7 @@
     background-color: var(--woodsmoke);
     display: flex;
     height: 53px;
-    justify-content: flex-end;
+    justify-content: center;
     margin-top: -1.5px;
     min-width: 411px;
 }
