@@ -2,6 +2,12 @@
 <%@ include file="common/navigation.jspf" %>
 
 <div class="container">
+    <div class="section-title" style="padding-bottom: 0;">
+        <span>Shop</span>
+        <h2>Shop</h2>
+        <p>Find what you are looking for</p>
+    </div>
+
     <ul class="nav" style="margin-top: 2%; margin-bottom: 2%">
         <li class="nav-item ">
             <a class="nav-link active categories" aria-current="page" href="#" style="padding-left: 0px">Hand-tied

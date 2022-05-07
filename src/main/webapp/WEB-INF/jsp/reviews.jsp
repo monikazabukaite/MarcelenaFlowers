@@ -6,6 +6,12 @@
 
 <div class="container">
 
+    <div class="section-title" style="padding-bottom: 0;">
+        <span>Reviews</span>
+        <h2>Reviews</h2>
+        <p>Read the reviews of our customers</p>
+    </div>
+
     <div class="row">
         <div class="col-sm-2">
             <h1 class="title">Reviews</h1>

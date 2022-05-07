@@ -24,6 +24,7 @@ public class AbstractCommandLineRunner implements CommandLineRunner{
 		reviewRepository.save(new Review("Emilly", "The Ellen", 5, "Labai gera gele", "February 14, 2022"));
 		reviewRepository.save(new Review("Ajus", "The Millie", 5, "Auksine gele", "February 12, 2022"));
 		reviewRepository.save(new Review("Haris", "The Abby", 5, "Ehhh gera gele", "February 5, 2022"));
+		reviewRepository.save(new Review("Birute", "The Kylie", 5, "Super parduotuve, dar karta grisime!", "May 1, 2022"));
 
 		itemRepository.save(new Item(1, "The Ellen", "images/flower1.jpg", 49));
 		itemRepository.save(new Item(2, "The Gabrielle", "images/flower2.jpg", 59));
