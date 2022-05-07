@@ -1,5 +1,6 @@
 <%@ include file="common/header.jspf" %>
 <%@ include file="common/navigation.jspf" %>
+<script src="../../js/index.js"></script>
 <style>
     <%@include file="/WEB-INF/css/checkout.css" %>
 </style>
@@ -26,21 +27,23 @@
                 <div class="input-name valign-text-middle">Choose a day that suits you</div>
             </div>
             <div class="default">
-                <div class="overlap-group-1">
+                <div class="overlap-group-0">
                     <a href="/thank-you" style="color: #fff;">Continue</a>
                 </div>
             </div>
         </div>
         <div class="flex-col-1">
-            <img class="x36c4577975feb4cb36f6b7bd052c8845-1" src="../../${item.imgUrl}"/>
+            <img class="x36c4577975feb4cb36f6b7bd052c8845-1 itemImg" src="../../${item.imgUrl}"/>
         </div>
         <div class="flex-col-2">
-            <div class="the-charlie playfairdisplay-semi-bold-black-20px">${item.name}</div>
-            <div class="quantity-1 playfairdisplay-normal-black-14px">Quantity ${quantity}</div>
-            <div class="price valign-text-middle playfairdisplay-normal-black-20px">$${item.price}</div>
+            <div class="the-charlie playfairdisplay-semi-bold-black-20px item">${item.name}</div>
+            <div class="quantity-1 playfairdisplay-normal-black-14px item">Quantity ${quantity}</div>
+            <div class="price valign-text-middle playfairdisplay-normal-black-20px item">$${item.price}</div>
         </div>
         <div class="remove-container">
-            <div class="remove playfairdisplay-normal-black-14px">Remove</div>
+            <div class="remove playfairdisplay-normal-black-14px"><a>
+                Remove
+            </a></div>
         </div>
     </div>
 </div>

@@ -29,7 +29,7 @@
 <%--                    </form>--%>
                 </div>
                 <div class="buygroup">
-                    <a href="/checkout">
+                    <a href="/checkout/${item.id}/1">
                         <input type="submit"  class="button-buynow"  value="Buy Now">
                     </a>
 <%--                    <form id="thistoo" action="checkout" method="post">--%>
