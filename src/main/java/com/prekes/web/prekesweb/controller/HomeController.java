@@ -20,4 +20,9 @@ public class HomeController {
         model.put("itemsList", items);
         return "home";
     }
+
+    @GetMapping("/login")
+    public String showLoginPage(ModelMap model) {
+        return "login";
+    }
 }

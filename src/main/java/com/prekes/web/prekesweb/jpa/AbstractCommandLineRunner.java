@@ -2,8 +2,11 @@ package com.prekes.web.prekesweb.jpa;
 
 import com.prekes.web.prekesweb.model.Item;
 import com.prekes.web.prekesweb.model.Review;
+import com.prekes.web.prekesweb.model.Role;
+import com.prekes.web.prekesweb.model.UserRole;
 import com.prekes.web.prekesweb.repository.ItemRepository;
 import com.prekes.web.prekesweb.repository.ReviewRepository;
+import com.prekes.web.prekesweb.repository.RoleRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +21,9 @@ public class AbstractCommandLineRunner implements CommandLineRunner{
 
 	@Autowired
 	private ItemRepository itemRepository;
+
+	@Autowired
+	private RoleRepository roleRepository;
 
 	@Override
 	public void run(String... args) {
@@ -35,5 +41,8 @@ public class AbstractCommandLineRunner implements CommandLineRunner{
 		itemRepository.save(new Item(6, "The Kylie", "images/flower3.jpg", 59));
 		itemRepository.save(new Item(7, "The Khloe", "images/flower1.jpg", 39));
 		itemRepository.save(new Item(8, "The Kim", "images/flower2.jpg", 49));
+
+		roleRepository.save(new Role(UserRole.USER));
+		roleRepository.save(new Role(UserRole.ADMIN));
 	}
 }
