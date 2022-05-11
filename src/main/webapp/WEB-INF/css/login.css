@@ -1,0 +1,23 @@
+.nav-a:hover {
+    text-underline: none;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #D7B5A9;
+    border-color: #D7B5A9;
+}
+
+.form-label {
+    font-family: 'Playfair Display';
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #D7B5A9;
+    border-color: #D7B5A9;
+}
+
+.form-check-input:checked {
+    background-color: #D7B5A9;
+    border-color: #D7B5A9;
+}

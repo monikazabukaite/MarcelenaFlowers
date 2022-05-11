@@ -21,5 +21,8 @@
                 </li>
             </ul>
         </div>
+        <div>
+            <a class="nav-a" href="/login" style="">Login</a>
+        </div>
     </div>
 </nav>

@@ -25,4 +25,9 @@ public class HomeController {
     public String showLoginPage(ModelMap model) {
         return "login";
     }
+
+    @GetMapping("/signup")
+    public String showSignUpPage(ModelMap model) {
+        return "signup";
+    }
 }
