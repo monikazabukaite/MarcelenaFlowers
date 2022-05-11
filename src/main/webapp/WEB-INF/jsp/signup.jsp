@@ -9,25 +9,23 @@
     <%@include file="/WEB-INF/css/login.css" %>
 </style>
 <div class="container" style="width: 25%; margin-top: 1%">
-    <form>
-        <!-- Email input -->
+    <form:form method="post" action="/signup" modelAttribute="user">
+
         <div class="form-outline mb-4">
-            <label class="form-label" for="form2Example1">Username</label>
-            <input type="text" id="form2Example1" class="form-control" />
+            <form:label cssClass="form-label" path="email">Email</form:label>
+            <form:input cssClass="form-control" type="email" path="email" required="required"/>
+        </div>
+        <div class="form-outline mb-4">
+            <form:label cssClass="form-label" path="username">Username</form:label>
+            <form:input cssClass="form-control" path="username" required="required"/>
         </div>
 
         <div class="form-outline mb-4">
-            <label class="form-label" for="form2Example2">Email</label>
-            <input type="email" id="form2Example2" class="form-control" />
-        </div>
-
-        <!-- Password input -->
-        <div class="form-outline mb-4">
-            <label class="form-label" for="form2Example3">Password</label>
-            <input type="password" id="form2Example3" class="form-control" />
+            <form:label cssClass="form-label" path="password">Password</form:label>
+            <form:input type="password" cssClass="form-control" path="password" required="required"/>
         </div>
 
         <!-- Submit button -->
-        <button type="button" class="btn btn-primary btn-block mb-4">Sign up</button>
-    </form>
+        <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+    </form:form>
 </div>
