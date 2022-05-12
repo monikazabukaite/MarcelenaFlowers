@@ -2,8 +2,10 @@ package com.prekes.web.prekesweb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication // scan for components in current package and below
+@ImportResource(locations = {"classpath:META-INF/beans.xml"})
 public class PrekesWebApplication {
 
 	public static void main(String[] args) {
