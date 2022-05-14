@@ -1,6 +1,7 @@
 <%@ include file="common/header.jspf" %>
 <%@ include file="common/navigation.jspf" %>
 <style>
+    <%@include file="/WEB-INF/css/login.css" %>
     <%@include file="/WEB-INF/css/reviews.css" %>
 </style>
 
@@ -29,7 +30,9 @@
                                 src="https://anima-uploads.s3.amazonaws.com/projects/62696d3b3d4164e3db77b2f1/releases/62696d510d9823d4331aadc6/img/line-8@2x.svg"
                         />
                     </div>
-                    <div class="x5 playfairdisplay-medium-black-17px">(${reviews.stream().filter(r -> r.getRating() == 5).count()})</div>
+                    <div class="x5 playfairdisplay-medium-black-17px">
+                        (${reviews.stream().filter(r -> r.getRating() == 5).count()})
+                    </div>
                 </div>
                 <div class="rating-count-row-2">
                     <div class="x5-stars playfairdisplay-medium-black-17px">4 stars</div>
@@ -39,7 +42,9 @@
                                 src="https://anima-uploads.s3.amazonaws.com/projects/62696d3b3d4164e3db77b2f1/releases/62696d510d9823d4331aadc6/img/line-8@2x.svg"
                         />
                     </div>
-                    <div class="x5-1 playfairdisplay-medium-black-17px">(${reviews.stream().filter(r -> r.getRating() == 4).count()})</div>
+                    <div class="x5-1 playfairdisplay-medium-black-17px">
+                        (${reviews.stream().filter(r -> r.getRating() == 4).count()})
+                    </div>
                 </div>
                 <div class="rating-count-row-3">
                     <div class="x5-stars-1 playfairdisplay-medium-black-17px">3 stars</div>
@@ -49,7 +54,9 @@
                                 src="https://anima-uploads.s3.amazonaws.com/projects/62696d3b3d4164e3db77b2f1/releases/62696d510d9823d4331aadc6/img/line-8@2x.svg"
                         />
                     </div>
-                    <div class="x5-2 playfairdisplay-medium-black-17px">(${reviews.stream().filter(r -> r.getRating() == 3).count()})</div>
+                    <div class="x5-2 playfairdisplay-medium-black-17px">
+                        (${reviews.stream().filter(r -> r.getRating() == 3).count()})
+                    </div>
                 </div>
                 <div class="rating-count-row">
                     <div class="x5-stars-2 playfairdisplay-medium-black-17px">2 stars</div>
@@ -59,7 +66,9 @@
                                 src="https://anima-uploads.s3.amazonaws.com/projects/62696d3b3d4164e3db77b2f1/releases/62696d510d9823d4331aadc6/img/line-8@2x.svg"
                         />
                     </div>
-                    <div class="x5-3 playfairdisplay-medium-black-17px">(${reviews.stream().filter(r -> r.getRating() == 2).count()})</div>
+                    <div class="x5-3 playfairdisplay-medium-black-17px">
+                        (${reviews.stream().filter(r -> r.getRating() == 2).count()})
+                    </div>
                 </div>
                 <div class="rating-count-row">
                     <div class="x5-stars-3 playfairdisplay-medium-black-17px">1 stars</div>
@@ -69,7 +78,9 @@
                                 src="https://anima-uploads.s3.amazonaws.com/projects/62696d3b3d4164e3db77b2f1/releases/62696d510d9823d4331aadc6/img/line-8-4@2x.svg"
                         />
                     </div>
-                    <div class="x5-4 playfairdisplay-medium-black-17px">(${reviews.stream().filter(r -> r.getRating() == 1).count()})</div>
+                    <div class="x5-4 playfairdisplay-medium-black-17px">
+                        (${reviews.stream().filter(r -> r.getRating() == 1).count()})
+                    </div>
                 </div>
             </div>
         </div>
@@ -107,6 +118,30 @@
                 </c:forEach>
             </div>
         </div>
+    </div>
+    <div style="padding-left: 25%; padding-right: 25%">
+        <h3>Leave a review</h3>
+        <form:form method="post" action="/add-review" modelAttribute="review">
+            <div class="col-md" style="margin-top: 1%">
+                <div class="form-outline mb-4">
+                    <form:label cssClass="form-label" path="user">User name</form:label>
+                    <form:input cssClass="form-control" type="text" path="user" required="required"/>
+                </div>
+                <div class="form-outline mb-4">
+                    <form:label cssClass="form-label" path="product">Product name</form:label>
+                    <form:input cssClass="form-control" type="text" path="product" required="required"/>
+                </div>
+                <div class="form-outline mb-4">
+                    <form:label cssClass="form-label" path="rating">Rating</form:label>
+                    <form:input cssClass="form-control" type="number" max="5" min="1" path="rating" required="required"/>
+                </div>
+                <div class="form-outline mb-4">
+                    <form:label cssClass="form-label" path="details">Review</form:label>
+                    <form:input cssClass="form-control" type="text" path="details" required="required"/>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+            </div>
+        </form:form>
     </div>
 </div>
 <%@ include file="common/footer.jspf" %>

@@ -67,7 +67,7 @@ public class HomeController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<UserInfoResponse> userLogin(ModelMap model, @ModelAttribute("user") User user, BindingResult result, HttpServletResponse response) {
+    public String userLogin(ModelMap model, @ModelAttribute("user") User user, BindingResult result, HttpServletResponse response) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
 
@@ -82,10 +82,7 @@ public class HomeController {
                 .collect(Collectors.toList());
         response.addCookie(new Cookie(jwtCookie.getName(), jwtCookie.getValue()));
 
-        return ResponseEntity.status(302)
-                .header(HttpHeaders.SET_COOKIE, jwtCookie.toString())
-                .header(HttpHeaders.LOCATION, "/home")
-                .build();
+        return "redirect:/home";
     }
 
     @GetMapping("/signup")
@@ -97,13 +94,13 @@ public class HomeController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity userSignup(ModelMap model, @ModelAttribute("user") User userModel, BindingResult result, HttpServletResponse response) {
+    public String userSignup(ModelMap model, @ModelAttribute("user") User userModel, BindingResult result, HttpServletResponse response) {
         if (userRepository.existsByUsername(userModel.getUsername())) {
-            return ResponseEntity.badRequest().body(new MessageResponse("Error: Username is already taken!"));
+            return "redirect:/error";
         }
 
         if (userRepository.existsByEmail(userModel.getEmail())) {
-            return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
+            return "redirect:/error";
         }
 
         // Create new user's account
@@ -135,7 +132,7 @@ public class HomeController {
         user.setRoles(roles);
         userRepository.save(user);
 
-        return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+        return "redirect:/home";
     }
 
     //todo: implement this view

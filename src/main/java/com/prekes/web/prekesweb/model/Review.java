@@ -10,11 +10,11 @@ public class Review implements Comparable<Review>{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String user;
-    private String product;
-    private int rating;
-    private String details;
-    private String date;
+    public String user;
+    public String product;
+    public int rating;
+    public String details;
+    public String date;
 
     public Review(String user, String product, int rating, String details, String date) {
         this.user = user;

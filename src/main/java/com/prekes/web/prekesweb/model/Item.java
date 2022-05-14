@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Item implements Comparable<Saskaita>{
+public class Item implements Comparable<Item>{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
@@ -59,7 +59,7 @@ public class Item implements Comparable<Saskaita>{
     }
 
     @Override
-    public int compareTo(Saskaita o) {
+    public int compareTo(Item o) {
         return 0;
     }
 }
