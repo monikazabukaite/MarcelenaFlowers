@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
+import static com.prekes.web.prekesweb.controller.HomeController.checkCurrentUser;
+
 @Controller
 public class ShopController {
 
@@ -17,6 +19,7 @@ public class ShopController {
 
     @GetMapping("/shop")
     public String showHomePage(ModelMap model) {
+        checkCurrentUser(model);
         List<Item> items = itemService.findAll();
         model.put("itemsList", items);
         return "shop";

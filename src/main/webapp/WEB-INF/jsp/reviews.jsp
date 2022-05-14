@@ -1,3 +1,4 @@
+<%@ page import="java.util.Objects" %>
 <%@ include file="common/header.jspf" %>
 <%@ include file="common/navigation.jspf" %>
 <style>
@@ -119,6 +120,9 @@
             </div>
         </div>
     </div>
+    <%
+        if (request.getAttribute("role") != null && Objects.equals(request.getAttribute("role"), "user")) {
+    %>
     <div style="padding-left: 25%; padding-right: 25%">
         <h3>Leave a review</h3>
         <form:form method="post" action="/add-review" modelAttribute="review">
@@ -133,7 +137,8 @@
                 </div>
                 <div class="form-outline mb-4">
                     <form:label cssClass="form-label" path="rating">Rating</form:label>
-                    <form:input cssClass="form-control" type="number" max="5" min="1" path="rating" required="required"/>
+                    <form:input cssClass="form-control" type="number" max="5" min="1" path="rating"
+                                required="required"/>
                 </div>
                 <div class="form-outline mb-4">
                     <form:label cssClass="form-label" path="details">Review</form:label>
@@ -142,6 +147,9 @@
                 <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
             </div>
         </form:form>
+        <% }
+        %>
+
     </div>
 </div>
 <%@ include file="common/footer.jspf" %>

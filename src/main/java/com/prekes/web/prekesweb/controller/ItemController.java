@@ -9,6 +9,7 @@ import com.prekes.web.prekesweb.repository.ItemRepository;
 import com.prekes.web.prekesweb.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -23,6 +24,8 @@ import java.util.Random;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static com.prekes.web.prekesweb.controller.HomeController.checkCurrentUser;
+
 @Controller
 public class ItemController {
 
@@ -34,12 +37,14 @@ public class ItemController {
 
     @GetMapping("/item/{itemId}")
     public String showItemPage(ModelMap model, @PathVariable int itemId) {
+        checkCurrentUser(model);
         model.addAttribute("item", itemService.findById(itemId));
         return "item";
     }
 
     @GetMapping("/add-item")
     public String showAddItemPage(ModelMap model) {
+        checkCurrentUser(model);
         Item item = new Item();
         item.setId((int) new Random().nextLong());
         model.addAttribute("item", item);

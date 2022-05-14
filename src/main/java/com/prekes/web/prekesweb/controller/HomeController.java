@@ -11,6 +11,7 @@ import com.prekes.web.prekesweb.repository.UserRepository;
 import com.prekes.web.prekesweb.security.jwt.JwtUtils;
 import com.prekes.web.prekesweb.security.services.UserDetailsImpl;
 import com.prekes.web.prekesweb.service.ItemService;
+import org.h2.engine.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
@@ -19,6 +20,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -53,6 +55,7 @@ public class HomeController {
 
     @GetMapping("/home")
     public String showHomePage(ModelMap model) {
+        checkCurrentUser(model);
         List<Item> items = itemService.findAll();
         model.put("itemsList", items);
         return "home";
@@ -142,5 +145,16 @@ public class HomeController {
         response.addCookie(new Cookie(cookie.getName(), cookie.getValue()));
         return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, cookie.toString())
                 .body(new MessageResponse("You've been signed out!"));
+    }
+
+    public static void checkCurrentUser(ModelMap model) {
+        Object user = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (user instanceof UserDetailsImpl && ((UserDetailsImpl) user).getAuthorities().contains(new SimpleGrantedAuthority("ADMIN"))) {
+            model.addAttribute("role", "admin");
+            model.addAttribute("username", ((UserDetailsImpl) user).getUsername());
+        } else if (user instanceof UserDetailsImpl && ((UserDetailsImpl) user).getAuthorities().contains(new SimpleGrantedAuthority("USER"))) {
+            model.addAttribute("role", "user");
+            model.addAttribute("username", ((UserDetailsImpl) user).getUsername());
+        }
     }
 }

@@ -7,6 +7,7 @@ import com.prekes.web.prekesweb.repository.ReviewRepository;
 import com.prekes.web.prekesweb.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,8 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Locale;
 
+import static com.prekes.web.prekesweb.controller.HomeController.checkCurrentUser;
+
 @Controller
 public class ReviewsController {
 
@@ -28,7 +31,8 @@ public class ReviewsController {
     private ReviewRepository reviewRepository;
 
     @GetMapping("/reviews")
-    public String showCartPage(ModelMap model) {
+    public String showReviewPage(ModelMap model) {
+        checkCurrentUser(model);
         model.addAttribute("review", new Review());
         List<Review> reviews = reviewService.findAll();
         model.put("reviews", reviews);
@@ -38,6 +42,7 @@ public class ReviewsController {
     @Transactional
     @PostMapping("/add-review")
     public String addReview(ModelMap model, @ModelAttribute("review") Review reviewModel) {
+        checkCurrentUser(model);
         String year = String.valueOf(LocalDate.now().getYear());
         String day = String.valueOf(LocalDate.now().getDayOfMonth());
         String month = LocalDate.now().getMonth().name().substring(0, 1).toUpperCase() + LocalDate.now().getMonth().name().substring(1).toLowerCase();

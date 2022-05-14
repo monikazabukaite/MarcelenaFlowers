@@ -7,12 +7,15 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import static com.prekes.web.prekesweb.controller.HomeController.checkCurrentUser;
+
 @Controller
 public class DeliveryController {
     @Autowired
     private ItemService itemService;
     @GetMapping("/delivery/{itemId}/{quantity}")
     public String showCartPage(ModelMap model, @PathVariable int itemId, @PathVariable int quantity) {
+        checkCurrentUser(model);
         model.addAttribute("item", itemService.findById(itemId));
         model.addAttribute("quantity", quantity);
         return "delivery";
