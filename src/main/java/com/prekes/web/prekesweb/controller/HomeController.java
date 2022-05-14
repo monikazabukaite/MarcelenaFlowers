@@ -138,13 +138,12 @@ public class HomeController {
         return "redirect:/home";
     }
 
-    //todo: implement this view
-    @PostMapping("/signout")
-    public ResponseEntity<?> logoutUser(HttpServletResponse response) {
+    @GetMapping("/signout")
+    public String logoutUser(ModelMap model, HttpServletResponse response) {
         ResponseCookie cookie = jwtUtils.getCleanJwtCookie();
         response.addCookie(new Cookie(cookie.getName(), cookie.getValue()));
-        return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, cookie.toString())
-                .body(new MessageResponse("You've been signed out!"));
+
+        return "redirect:/home";
     }
 
     public static void checkCurrentUser(ModelMap model) {
