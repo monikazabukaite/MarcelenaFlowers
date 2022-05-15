@@ -1,7 +1,7 @@
 package com.prekes.web.prekesweb.interceptor;
 
 import com.prekes.web.prekesweb.security.services.UserDetailsImpl;
-import com.prekes.web.prekesweb.service.DatabaseActivityLogService;
+import com.prekes.web.prekesweb.service.ActivityLogService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class RequestLoggingInterceptor implements HandlerInterceptor {
     private static final Logger logger = LoggerFactory.getLogger(RequestLoggingInterceptor.class);
 
     @Autowired
-    private DatabaseActivityLogService activityLogService;
+    private ActivityLogService activityLogService;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {

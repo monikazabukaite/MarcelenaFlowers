@@ -10,4 +10,6 @@
             <bean class="com.prekes.web.prekesweb.interceptor.RequestLoggingInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
+
+    <bean primary="true" class="com.prekes.web.prekesweb.service.FileActivityLogService"/>
 </beans>
