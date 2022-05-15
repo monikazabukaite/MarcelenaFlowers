@@ -44,7 +44,7 @@
         </div>
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in">
             <div class="member">
-                <img src="images/Jokubas.jpg" alt="">
+                <img src="images/Jokubas.png" alt="">
                 <h4>Jokubas Jurkys</h4>
                 <span>Development Lead</span>
                 <p> Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum
