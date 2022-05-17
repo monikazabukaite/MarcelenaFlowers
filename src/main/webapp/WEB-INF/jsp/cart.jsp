@@ -8,7 +8,7 @@
     <div class="flex-col">
         <h1 class="title">Your cart</h1>
         <div class="flex-row-1">
-            <p class="not-ready-to-checkout">Not ready to checkout? Continue shopping!</p>
+            <a class="not-ready-to-checkout" href="/shop">Not ready to checkout? Continue shopping!</a>
             <div class="title-1">Order Summary</div>
         </div>
     </div>

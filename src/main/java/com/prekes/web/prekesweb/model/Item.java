@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.List;
 
 @Entity
 public class Item implements Comparable<Item>{
@@ -12,11 +13,13 @@ public class Item implements Comparable<Item>{
     public int id;
 
     public String name;
+    public String category;
     public String imgUrl;
     public int price;
 
-    public Item(int id, String name, String imgUrl, int price) {
+    public Item(int id, String category, String name, String imgUrl, int price) {
         this.id = id;
+        this.category = category;
         this.name = name;
         this.imgUrl = imgUrl;
         this.price = price;
@@ -56,6 +59,10 @@ public class Item implements Comparable<Item>{
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public void filterCategory(String category, List<Item> itemsList) {
+
     }
 
     @Override

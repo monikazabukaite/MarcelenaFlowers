@@ -3,10 +3,10 @@
 <script src="../js/index.js"></script>
 <div class="container">
 
-    <div class="section-title" style="padding-bottom: 0;">
-        <span>${item.name}</span>
-        <h2>${item.name}</h2>
-    </div>
+<%--    <div class="section-title" style="padding-bottom: 0;">--%>
+<%--        <span>${item.name}</span>--%>
+<%--        <h2>${item.name}</h2>--%>
+<%--    </div>--%>
 
     <div class="row" style="margin-left: 2%;">
         <div class="card" style="width: 45%;">

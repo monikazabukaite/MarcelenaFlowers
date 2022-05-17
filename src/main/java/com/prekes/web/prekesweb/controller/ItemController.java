@@ -53,7 +53,7 @@ public class ItemController {
 
     @PostMapping("/add-item")
     public String addItem(ModelMap model, @ModelAttribute("item") Item itemModel) {
-        Item item = new Item(itemModel.id, itemModel.name, itemModel.imgUrl, itemModel.price);
+        Item item = new Item(itemModel.id, itemModel.category, itemModel.name, itemModel.imgUrl, itemModel.price);
 
         itemRepository.save(item);
 

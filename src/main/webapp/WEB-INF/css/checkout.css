@@ -34,7 +34,7 @@
     letter-spacing: 0;
     line-height: 44px;
     margin-top: 62px;
-    margin-left: -60px;
+    /*margin-left: -60px;*/
     min-height: 44px;
     white-space: nowrap;
 }
@@ -57,7 +57,7 @@
     min-height: 26px;
     white-space: nowrap;
     width: 316px;
-    margin-left: -60px;
+    /*margin-left: -60px;*/
 }
 
 .title-1 {
