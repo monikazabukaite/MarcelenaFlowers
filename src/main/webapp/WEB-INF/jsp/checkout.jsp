@@ -16,9 +16,11 @@
         <div class="flex-col-3">
             <input placeholder="First Name" class="input-name valign-text-middle input"/>
             <input placeholder="Last Name" class="input-name valign-text-middle input"/>
-            <input placeholder="Country" class="input-name valign-text-middle input"/>
-            <input placeholder="City" class="input-name valign-text-middle input"/>
-            <input placeholder="Street" class="input-name valign-text-middle input"/>
+            <div class="row">
+                <input placeholder="Country" class="input-name valign-text-middle inputCard column"/>
+                <input placeholder="City" class="input-name valign-text-middle inputCard column"/>
+                <input placeholder="Street" class="input-name valign-text-middle inputCard column"/>
+            </div>
             <input placeholder="Zipcode" class="input-name valign-text-middle input"/>
 
             <label class="container subtotal playfairdisplay-normal-woodsmoke-15px">Save contact information

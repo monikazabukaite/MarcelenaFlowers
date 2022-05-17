@@ -16,9 +16,12 @@
         <div class="flex-col-3">
             <input placeholder="Cardholder Name" class="input-name valign-text-middle input"/>
             <input placeholder="Card Number" class="input-name valign-text-middle input"/>
-            <input placeholder="Month" class="input-name valign-text-middle input"/>
-            <input placeholder="Year" class="input-name valign-text-middle input"/>
-            <input placeholder="CVC" class="input-name valign-text-middle input"/>
+            <div class="row">
+                <input placeholder="Month" class="input-name valign-text-middle inputCard column"/>
+                <input placeholder="Year" class="input-name valign-text-middle inputCard column"/>
+                <input placeholder="CVC" class="input-name valign-text-middle inputCard column"/>
+            </div>
+
 
             <label class="container subtotal playfairdisplay-normal-woodsmoke-15px">Save card data for future payments
                 <input type="checkbox">

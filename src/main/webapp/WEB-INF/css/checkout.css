@@ -103,6 +103,11 @@
     margin-top: -70px;
 }
 
+.column {
+    float: left;
+    width: 33.33%;
+}
+
 .x36c4577975feb4cb36f6b7bd052c8845-1 {
     height: 198px;
     object-fit: cover;
@@ -200,6 +205,15 @@
     min-width: 409px;
     margin-bottom: 10px;
     padding: 5px 15px;
+}
+.inputCard {
+    align-items: flex-start;
+    border: 0.5px solid var(--black);
+    display: flex;
+    height: 40px;
+    width: 124px;
+    margin: 5px 10px 15px 10px;
+    padding: 15px 15px;
 }
 
 .info-columns {
