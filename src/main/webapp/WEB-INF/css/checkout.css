@@ -206,6 +206,7 @@
     margin-bottom: 10px;
     padding: 5px 15px;
 }
+
 .inputCard {
     align-items: flex-start;
     border: 0.5px solid var(--black);
@@ -214,83 +215,6 @@
     width: 124px;
     margin: 5px 10px 15px 10px;
     padding: 15px 15px;
-}
-
-.info-columns {
-    align-items: flex-start;
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    /*height: 416px;*/
-    margin-right: 13px;
-    margin-top: 10px;
-    min-width: 1077px;
-}
-
-.input-first-name {
-    align-items: flex-start;
-    border: 0.5px solid var(--black);
-    margin-right: 5px;
-    display: flex;
-    height: 40px;
-    min-width: 200px;
-    margin-left: 52px;
-    margin-top: -25px;
-    padding: 5px 15px;
-}
-
-.input-last-name {
-    align-items: flex-start;
-    border: 0.5px solid var(--black);
-    display: flex;
-    height: 40px;
-    min-width: 200px;
-    margin-top: -25px;
-    padding: 5px 15px;
-}
-
-.input-street {
-    align-items: flex-start;
-    border: 0.5px solid var(--black);
-    display: flex;
-    height: 40px;
-    min-width: 409px;
-    margin-bottom: 10px;
-    padding: 5px 15px;
-}
-
-.input-country {
-    align-items: flex-start;
-    border: 0.5px solid var(--black);
-    margin-right: 5px;
-    display: flex;
-    height: 40px;
-    min-width: 133px;
-    margin-left: 52px;
-    margin-top: -25px;
-    padding: 5px 15px;
-}
-
-.input-city {
-    align-items: flex-start;
-    border: 0.5px solid var(--black);
-    margin-right: 5px;
-    display: flex;
-    height: 40px;
-    min-width: 133px;
-    margin-top: -25px;
-    padding: 5px 15px;
-}
-
-.input-zipcode {
-    align-items: flex-start;
-    border: 0.5px solid var(--black);
-    margin-right: 5px;
-    display: flex;
-    height: 40px;
-    min-width: 133px;
-    margin-top: -25px;
-    padding: 5px 15px;
 }
 
 .input-delivery {
@@ -313,6 +237,16 @@
     min-width: 409px;
     margin-bottom: 10px;
     padding: 5px 15px;
+}
+
+select {
+    align-items: flex-start;
+    display: flex;
+    border: 0.5px solid var(--black);
+    padding: 5px 15px;
+    width: 124px;
+    height: 40px;
+    margin-bottom: 15px;
 }
 
 /* for checkbox */

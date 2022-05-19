@@ -21,6 +21,42 @@
                 <input placeholder="City" class="input-name valign-text-middle inputCard column"/>
                 <input placeholder="Street" class="input-name valign-text-middle inputCard column"/>
             </div>
+
+            <select name="country" id="country">
+                <option value="select">Country</option>
+                <option value="BE">Belgium</option>
+                <option value="DE">Germany</option>
+                <option value="DK">Denmark</option>
+                <option value="FR">France</option>
+                <option value="GR">Greece</option>
+                <option value="LT">Lithuania</option>
+                <option value="MT">Malta</option>
+            </select>
+
+<%--            <form action="#">--%>
+<%--                <select name="country" id="country">--%>
+<%--                    <option value="select">Country</option>--%>
+<%--                    <option value="FR">France</option>--%>
+<%--                    <option value="IT">Italy</option>--%>
+<%--                    <option value="LV">Latvia</option>--%>
+<%--                    <option value="LT">Lithuania</option>--%>
+<%--                    <option value="ES">Spain</option>--%>
+<%--                </select>--%>
+<%--            </form>--%>
+
+<%--            <form action="#">--%>
+<%--                <select name="city" id="city">--%>
+<%--                    <option value="select">City</option>--%>
+<%--                    <option value="paris">Paris</option>--%>
+<%--                    <option value="roma">Roma</option>--%>
+<%--                    <option value="milan">Milan</option>--%>
+<%--                    <option value="vilnius">Vilnius</option>--%>
+<%--                    <option value="kaunas">Kaunas</option>--%>
+<%--                    <option value="ryga">Ryga</option>--%>
+<%--                    <option value="barcelona">Barcelona</option>--%>
+<%--                </select>--%>
+<%--            </form>--%>
+
             <input placeholder="Zipcode" class="input-name valign-text-middle input"/>
 
             <label class="container subtotal playfairdisplay-normal-woodsmoke-15px">Save contact information
