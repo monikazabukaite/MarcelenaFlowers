@@ -34,15 +34,15 @@ public class AbstractCommandLineRunner implements CommandLineRunner {
         reviewRepository.save(new Review("Haris", "The Abby", 5, "Ehhh gera gele", "February 5, 2022"));
         reviewRepository.save(new Review("Birute", "The Kylie", 5, "Super parduotuve, dar karta grisime!", "May 1, 2022"));
 
-        itemRepository.save(new Item(1, "Hand-tied bouquets", "The Ellen", "images/flower1.jpg", 49));
-        itemRepository.save(new Item(2, "Hand-tied bouquets", "The Millie", "images/flower2.jpg", 59));
-        itemRepository.save(new Item(3, "Hand-tied bouquets", "The Abby", "images/flower3.jpg", 39));
-        itemRepository.save(new Item(4, "Hand-tied bouquets", "The Jeanie", "images/flower4.jpg", 49));
+        itemRepository.save(new Item(1, "hand-tied-bouquets", "The Ellen", "images/flower1.jpg", 49));
+        itemRepository.save(new Item(2, "hand-tied-bouquets", "The Gabrielle", "images/flower2.jpg", 59));
+        itemRepository.save(new Item(3, "hand-tied-bouquets", "The Abby", "images/flower3.jpg", 39));
+        itemRepository.save(new Item(4, "spring-flowers", "The Jeanie", "images/flower4.jpg", 49));
 
-        itemRepository.save(new Item(5, "Hand-tied bouquets", "The Harper", "images/flower5.jpg", 49));
-        itemRepository.save(new Item(6, "Spring flowers", "The Grace", "images/flower6.jpg", 59));
-        itemRepository.save(new Item(7, "Spring flowers", "The Camille", "images/flower7.jpg", 39));
-        itemRepository.save(new Item(8, "Spring flowers", "The Caitlin", "images/flower8.jpg", 49));
+        itemRepository.save(new Item(5, "dried-flowers", "The Harper", "images/flower5.jpg", 49));
+        itemRepository.save(new Item(6, "spring-flowers", "The Grace", "images/flower6.jpg", 59));
+        itemRepository.save(new Item(7, "dried-flowers", "The Camille", "images/flower7.jpg", 39));
+        itemRepository.save(new Item(8, "spring-flowers", "The Caitlin", "images/flower8.jpg", 49));
 
         roleRepository.save(new Role(UserRole.USER));
         roleRepository.save(new Role(UserRole.ADMIN));

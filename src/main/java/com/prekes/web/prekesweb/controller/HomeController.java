@@ -24,10 +24,12 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.Cookie;
@@ -58,6 +60,19 @@ public class HomeController {
         checkCurrentUser(model);
         List<Item> items = itemService.findAll();
         model.put("itemsList", items);
+        return "home";
+    }
+
+    @GetMapping("/home/{filterName}")
+    public String showHomePageWithFilter(ModelMap model, @PathVariable String filterName) {
+        checkCurrentUser(model);
+        List<Item> items = itemService.findAll();
+
+        items = items.stream()
+                .filter(item -> item.category.equals(filterName))
+                .collect(Collectors.toList());
+
+        model.put("filteredItemsList", items);
         return "home";
     }
 
