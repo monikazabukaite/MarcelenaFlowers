@@ -12,6 +12,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 @Component
 public class AbstractCommandLineRunner implements CommandLineRunner {
     private static final Logger log = LoggerFactory.getLogger(AbstractCommandLineRunner.class);
@@ -51,9 +55,13 @@ public class AbstractCommandLineRunner implements CommandLineRunner {
         roleRepository.save(new Role(UserRole.USER));
         roleRepository.save(new Role(UserRole.ADMIN));
 
-        userRepository.save(new User( "admin","admin@admin.com", encoder.encode("admin"), new Role(UserRole.ADMIN)));
-        userRepository.save(new User( "admin2","admin2@admin.com", encoder.encode("admin2"), new Role(UserRole.ADMIN)));
-        userRepository.save(new User( "a","a@a.com", encoder.encode("a"), new Role(UserRole.USER)));
-        userRepository.save(new User( "b","b@b.com", encoder.encode("b"), new Role(UserRole.USER)));
+        User admin = new User(Long.getLong("1"), "admin", "admin@admin.com", encoder.encode("admin"));
+        Set<Role> adminRole = new HashSet<Role>(List.of(roleRepository.findByName(UserRole.ADMIN).get()));
+        Set<Role> userRole = new HashSet<Role>(List.of(roleRepository.findByName(UserRole.USER).get()));
+
+        userRepository.save(new User(Long.getLong("1"), "admin", "admin@admin.com", encoder.encode("admin"), adminRole));
+        userRepository.save(new User(Long.getLong("2"), "admin2", "admin2@admin.com", encoder.encode("admin2"), adminRole));
+        userRepository.save(new User(Long.getLong("3"), "a", "a@a.com", encoder.encode("a"), userRole));
+        userRepository.save(new User(Long.getLong("4"), "b", "b@b.com", encoder.encode("b"), userRole));
     }
 }
