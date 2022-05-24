@@ -22,8 +22,7 @@ public class ReviewService {
     }
 
     public Review add(Review review) {
-        reviewRepository.save(review);
-        return review;
+        return reviewRepository.save(review);
     }
 
     public void update(Review review) {

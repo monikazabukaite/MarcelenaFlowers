@@ -1,9 +1,7 @@
 package com.prekes.web.prekesweb.service;
 
 import com.prekes.web.prekesweb.model.Item;
-import com.prekes.web.prekesweb.model.Review;
 import com.prekes.web.prekesweb.repository.ItemRepository;
-import com.prekes.web.prekesweb.repository.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,8 +22,7 @@ public class ItemService {
     }
 
     public Item add(Item item) {
-        itemRepository.save(item);
-        return item;
+        return itemRepository.save(item);
     }
 
     public void update(Item item) {

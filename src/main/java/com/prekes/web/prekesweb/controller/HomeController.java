@@ -4,18 +4,13 @@ import com.prekes.web.prekesweb.model.Item;
 import com.prekes.web.prekesweb.model.Role;
 import com.prekes.web.prekesweb.model.User;
 import com.prekes.web.prekesweb.model.UserRole;
-import com.prekes.web.prekesweb.payload.response.MessageResponse;
-import com.prekes.web.prekesweb.payload.response.UserInfoResponse;
-import com.prekes.web.prekesweb.repository.RoleRepository;
-import com.prekes.web.prekesweb.repository.UserRepository;
 import com.prekes.web.prekesweb.security.jwt.JwtUtils;
 import com.prekes.web.prekesweb.security.services.UserDetailsImpl;
 import com.prekes.web.prekesweb.service.ItemService;
-import org.h2.engine.Mode;
+import com.prekes.web.prekesweb.service.RoleService;
+import com.prekes.web.prekesweb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -24,7 +19,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,15 +37,15 @@ import java.util.stream.Collectors;
 @Controller
 public class HomeController {
     @Autowired
-    AuthenticationManager authenticationManager;
+    private AuthenticationManager authenticationManager;
     @Autowired
-    UserRepository userRepository;
+    private UserService userService;
     @Autowired
-    RoleRepository roleRepository;
+    private RoleService roleService;
     @Autowired
-    PasswordEncoder encoder;
+    private PasswordEncoder encoder;
     @Autowired
-    JwtUtils jwtUtils;
+    private JwtUtils jwtUtils;
     @Autowired
     private ItemService itemService;
 
@@ -113,11 +107,11 @@ public class HomeController {
 
     @PostMapping("/signup")
     public String userSignup(ModelMap model, @ModelAttribute("user") User userModel, BindingResult result, HttpServletResponse response) {
-        if (userRepository.existsByUsername(userModel.getUsername())) {
+        if (userService.existsByUsername(userModel.getUsername())) {
             return "redirect:/error";
         }
 
-        if (userRepository.existsByEmail(userModel.getEmail())) {
+        if (userService.existsByEmail(userModel.getEmail())) {
             return "redirect:/error";
         }
 
@@ -130,17 +124,17 @@ public class HomeController {
         Set<Role> roles = new HashSet<>();
 
         if (strRoles.isEmpty()) {
-            Role userRole = roleRepository.findByName(UserRole.USER)
+            Role userRole = roleService.findByName(UserRole.USER)
                     .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
             roles.add(userRole);
         } else {
             strRoles.forEach(role -> {
                 if ("admin".equals(role)) {
-                    Role adminRole = roleRepository.findByName(UserRole.ADMIN)
+                    Role adminRole = roleService.findByName(UserRole.ADMIN)
                             .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
                     roles.add(adminRole);
                 } else {
-                    Role userRole = roleRepository.findByName(UserRole.USER)
+                    Role userRole = roleService.findByName(UserRole.USER)
                             .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
                     roles.add(userRole);
                 }
@@ -148,7 +142,7 @@ public class HomeController {
         }
 
         user.setRoles(roles);
-        userRepository.save(user);
+        userService.add(user);
 
         return "redirect:/home";
     }

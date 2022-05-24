@@ -1,28 +1,16 @@
 package com.prekes.web.prekesweb.controller;
 
 import com.prekes.web.prekesweb.model.Item;
-import com.prekes.web.prekesweb.model.Role;
-import com.prekes.web.prekesweb.model.User;
-import com.prekes.web.prekesweb.model.UserRole;
-import com.prekes.web.prekesweb.payload.response.MessageResponse;
-import com.prekes.web.prekesweb.repository.ItemRepository;
 import com.prekes.web.prekesweb.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.servlet.http.HttpServletResponse;
-import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import static com.prekes.web.prekesweb.controller.HomeController.checkCurrentUser;
 
@@ -31,9 +19,6 @@ public class ItemController {
 
     @Autowired
     private ItemService itemService;
-
-    @Autowired
-    private ItemRepository itemRepository;
 
     @GetMapping("/item/{itemId}")
     public String showItemPage(ModelMap model, @PathVariable int itemId) {
@@ -53,9 +38,9 @@ public class ItemController {
 
     @PostMapping("/add-item")
     public String addItem(ModelMap model, @ModelAttribute("item") Item itemModel) {
-        Item item = new Item(itemModel.id, itemModel.category, itemModel.name, itemModel.imgUrl, itemModel.price);
+        Item item = new Item(itemModel.category, itemModel.name, itemModel.imgUrl, itemModel.price);
 
-        itemRepository.save(item);
+        itemService.add(item);
 
         return "redirect:/shop";
     }
