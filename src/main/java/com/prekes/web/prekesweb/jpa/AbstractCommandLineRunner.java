@@ -55,13 +55,12 @@ public class AbstractCommandLineRunner implements CommandLineRunner {
         roleRepository.save(new Role(UserRole.USER));
         roleRepository.save(new Role(UserRole.ADMIN));
 
-        User admin = new User(Long.getLong("1"), "admin", "admin@admin.com", encoder.encode("admin"));
         Set<Role> adminRole = new HashSet<Role>(List.of(roleRepository.findByName(UserRole.ADMIN).get()));
         Set<Role> userRole = new HashSet<Role>(List.of(roleRepository.findByName(UserRole.USER).get()));
 
-        userRepository.save(new User(Long.getLong("1"), "admin", "admin@admin.com", encoder.encode("admin"), adminRole));
-        userRepository.save(new User(Long.getLong("2"), "admin2", "admin2@admin.com", encoder.encode("admin2"), adminRole));
-        userRepository.save(new User(Long.getLong("3"), "a", "a@a.com", encoder.encode("a"), userRole));
-        userRepository.save(new User(Long.getLong("4"), "b", "b@b.com", encoder.encode("b"), userRole));
+        userRepository.save(new User("admin", "admin@admin.com", encoder.encode("admin"), adminRole));
+        userRepository.save(new User("admin2", "admin2@admin.com", encoder.encode("admin2"), adminRole));
+        userRepository.save(new User("a", "a@a.com", encoder.encode("a"), userRole));
+        userRepository.save(new User("b", "b@b.com", encoder.encode("b"), userRole));
     }
 }
