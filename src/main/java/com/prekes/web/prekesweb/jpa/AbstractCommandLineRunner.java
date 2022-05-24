@@ -1,9 +1,6 @@
 package com.prekes.web.prekesweb.jpa;
 
-import com.prekes.web.prekesweb.model.Item;
-import com.prekes.web.prekesweb.model.Review;
-import com.prekes.web.prekesweb.model.Role;
-import com.prekes.web.prekesweb.model.UserRole;
+import com.prekes.web.prekesweb.model.*;
 import com.prekes.web.prekesweb.repository.ItemRepository;
 import com.prekes.web.prekesweb.repository.ReviewRepository;
 import com.prekes.web.prekesweb.repository.RoleRepository;
@@ -27,6 +24,9 @@ public class AbstractCommandLineRunner implements CommandLineRunner {
     @Autowired
     private RoleRepository roleRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @Override
     public void run(String... args) {
         reviewRepository.save(new Review("Emilly", "The Ellen", 5, "Labai gera gele", "February 14, 2022"));
@@ -46,5 +46,10 @@ public class AbstractCommandLineRunner implements CommandLineRunner {
 
         roleRepository.save(new Role(UserRole.USER));
         roleRepository.save(new Role(UserRole.ADMIN));
+
+        userRepository.save(new User( "admin","admin@admin.com", "admin", new Role(UserRole.ADMIN)));
+        userRepository.save(new User( "admin2","admin2@admin.com", "admin2", new Role(UserRole.ADMIN)));
+        userRepository.save(new User( "a","a@a.com", "a", new Role(UserRole.USER)));
+        userRepository.save(new User( "b","b@b.com", "b", new Role(UserRole.USER)));
     }
 }
