@@ -11,8 +11,10 @@ import static com.prekes.web.prekesweb.controller.HomeController.checkCurrentUse
 
 @Controller
 public class CheckoutController {
+
     @Autowired
     private ItemService itemService;
+
     @GetMapping("/checkout/{itemId}/{quantity}")
     public String showCartPage(ModelMap model, @PathVariable int itemId, @PathVariable int quantity) {
         checkCurrentUser(model);

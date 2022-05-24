@@ -1,14 +1,14 @@
 package com.prekes.web.prekesweb.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller("error")
 public class ErrorController {
+
 	@ExceptionHandler(Exception.class)
 	public ModelAndView handleException(HttpServletRequest req, Exception ex) {
 		ModelAndView mv = new ModelAndView();
