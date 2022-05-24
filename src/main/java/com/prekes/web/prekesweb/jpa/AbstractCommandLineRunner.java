@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -26,6 +27,9 @@ public class AbstractCommandLineRunner implements CommandLineRunner {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private PasswordEncoder encoder;
 
     @Override
     public void run(String... args) {
@@ -47,9 +51,9 @@ public class AbstractCommandLineRunner implements CommandLineRunner {
         roleRepository.save(new Role(UserRole.USER));
         roleRepository.save(new Role(UserRole.ADMIN));
 
-        userRepository.save(new User( "admin","admin@admin.com", "admin", new Role(UserRole.ADMIN)));
-        userRepository.save(new User( "admin2","admin2@admin.com", "admin2", new Role(UserRole.ADMIN)));
-        userRepository.save(new User( "a","a@a.com", "a", new Role(UserRole.USER)));
-        userRepository.save(new User( "b","b@b.com", "b", new Role(UserRole.USER)));
+        userRepository.save(new User( "admin","admin@admin.com", encoder.encode("admin"), new Role(UserRole.ADMIN)));
+        userRepository.save(new User( "admin2","admin2@admin.com", encoder.encode("admin2"), new Role(UserRole.ADMIN)));
+        userRepository.save(new User( "a","a@a.com", encoder.encode("a"), new Role(UserRole.USER)));
+        userRepository.save(new User( "b","b@b.com", encoder.encode("b"), new Role(UserRole.USER)));
     }
 }
