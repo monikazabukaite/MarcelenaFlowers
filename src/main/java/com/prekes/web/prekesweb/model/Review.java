@@ -15,10 +15,15 @@ public class Review implements Comparable<Review>{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     public String user;
+
     public String product;
+
     public int rating;
+
     public String details;
+
     public String date;
 
     public Review(String user, String product, int rating, String details, String date) {

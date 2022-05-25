@@ -39,14 +39,19 @@ public class HomeController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+
     @Autowired
     private UserService userService;
+
     @Autowired
     private RoleService roleService;
+
     @Autowired
     private PasswordEncoder encoder;
+
     @Autowired
     private JwtUtils jwtUtils;
+
     @Autowired
     private ItemService itemService;
 
