@@ -17,13 +17,12 @@
             <input placeholder="First Name" class="input-name valign-text-middle input"/>
             <input placeholder="Last Name" class="input-name valign-text-middle input"/>
 
-            <div class="row">
-                <input placeholder="Country" class="input-name valign-text-middle inputCard column"/>
+            <div class="row" style="margin-left: -9px;">
                 <input placeholder="City" class="input-name valign-text-middle inputCard column"/>
                 <input placeholder="Street" class="input-name valign-text-middle inputCard column"/>
             </div>
 
-            <select name="country" id="country">
+            <select name="country" id="country" style="margin-left: 1px;">
                 <option value="select">Country</option>
                 <option value="BE">Belgium</option>
                 <option value="DE">Germany</option>
