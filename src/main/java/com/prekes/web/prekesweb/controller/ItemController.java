@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.persistence.OptimisticLockException;
 import java.util.Random;
 
 import static com.prekes.web.prekesweb.controller.HomeController.checkCurrentUser;
@@ -39,7 +38,7 @@ public class ItemController {
 
     @PostMapping("/add-item")
     public String addItem(ModelMap model, @ModelAttribute("item") Item itemModel) {
-        Item item = new Item(itemModel.category, itemModel.name, itemModel.imgUrl, itemModel.price);
+        Item item = new Item(itemModel.getCategory(), itemModel.getName(), itemModel.getImgUrl(), itemModel.getPrice());
 
         itemService.add(item);
 
@@ -58,11 +57,11 @@ public class ItemController {
 
     @PostMapping("/edit-item")
     public String editItem(ModelMap model, @ModelAttribute("item") Item itemModel) {
-        Item editingItem = itemService.findById(itemModel.id);
+        Item editingItem = itemService.findById(itemModel.getId());
 
-        editingItem.setImgUrl(itemModel.imgUrl);
-        editingItem.setName(itemModel.name);
-        editingItem.setPrice(itemModel.price);
+        editingItem.setImgUrl(itemModel.getImgUrl());
+        editingItem.setName(itemModel.getName());
+        editingItem.setPrice(itemModel.getPrice());
 
         itemService.update(editingItem);
 

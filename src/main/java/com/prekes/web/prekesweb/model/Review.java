@@ -16,15 +16,15 @@ public class Review implements Comparable<Review>{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    public String user;
+    private String user;
 
-    public String product;
+    private String product;
 
-    public int rating;
+    private int rating;
 
-    public String details;
+    private String details;
 
-    public String date;
+    private String date;
 
     public Review(String user, String product, int rating, String details, String date) {
         this.user = user;

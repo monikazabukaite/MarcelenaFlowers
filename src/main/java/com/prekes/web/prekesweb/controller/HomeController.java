@@ -69,7 +69,7 @@ public class HomeController {
         List<Item> items = itemService.findAll();
 
         items = items.stream()
-                .filter(item -> item.category.equals(filterName))
+                .filter(item -> item.getCategory().equals(filterName))
                 .collect(Collectors.toList());
 
         model.put("filteredItemsList", items);

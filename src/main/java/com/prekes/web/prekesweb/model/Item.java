@@ -14,25 +14,25 @@ import javax.persistence.Id;
 public class Item implements Comparable<Item> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id;
+    private int id;
 
-    public String name;
+    private String name;
 
-    public String category;
+    private String category;
 
-    public String imgUrl;
+    private String imgUrl;
 
-    public int price;
+    private int price;
+
+    public Item() {
+
+    }
 
     public Item(String category, String name, String imgUrl, int price) {
         this.category = category;
         this.name = name;
         this.imgUrl = imgUrl;
         this.price = price;
-    }
-
-    public Item() {
-
     }
 
     @Override

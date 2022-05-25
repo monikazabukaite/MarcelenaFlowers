@@ -38,7 +38,7 @@ public class ReviewsController {
         String day = String.valueOf(LocalDate.now().getDayOfMonth());
         String month = LocalDate.now().getMonth().name().substring(0, 1).toUpperCase() + LocalDate.now().getMonth().name().substring(1).toLowerCase();
         String date = month + " " + day + ", " + year;
-        Review review = new Review(reviewModel.user, reviewModel.product, reviewModel.rating, reviewModel.details, date);
+        Review review = new Review(reviewModel.getUser(), reviewModel.getProduct(), reviewModel.getRating(), reviewModel.getDetails(), date);
 
         reviewService.add(review);
 
