@@ -81,8 +81,13 @@ public class HomeController {
 
     @PostMapping("/login")
     public String userLogin(ModelMap model, @ModelAttribute("user") User user, BindingResult result, HttpServletResponse response) {
-        Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+        Authentication authentication;
+        try {
+             authentication = authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+        } catch (Exception e) {
+            return "redirect:/unauthorizedAccess";
+        }
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
@@ -165,5 +170,9 @@ public class HomeController {
             model.addAttribute("role", "user");
             model.addAttribute("username", ((UserDetailsImpl) user).getUsername());
         }
+    }
+    @GetMapping("/unauthorizedAccess")
+    public String showUnauthorizedAccess(ModelMap model) {
+        return "unauthorizedAccess";
     }
 }
