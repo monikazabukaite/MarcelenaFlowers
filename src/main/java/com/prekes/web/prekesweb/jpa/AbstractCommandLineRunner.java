@@ -59,8 +59,6 @@ public class AbstractCommandLineRunner implements CommandLineRunner {
         Set<Role> userRole = new HashSet<>(List.of(roleService.findByName(UserRole.USER).get()));
 
         userService.add(new User("admin", "admin@admin.com", encoder.encode("admin"), adminRole));
-        userService.add(new User("admin2", "admin2@admin.com", encoder.encode("admin2"), adminRole));
-        userService.add(new User("a", "a@a.com", encoder.encode("a"), userRole));
-        userService.add(new User("b", "b@b.com", encoder.encode("b"), userRole));
+        userService.add(new User("user", "user@user.com", encoder.encode("user"), userRole));
     }
 }
