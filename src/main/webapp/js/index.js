@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     $(".button-plus").click(function() {
         increaseValue();
     });
@@ -15,7 +14,6 @@ $(document).ready(function() {
     $(".input-delivery").click(function() {
         selectedDelivery();
     });
-
 });
 
 function increaseValue() {
@@ -36,8 +34,13 @@ function removeItem() {
     $(".remove").remove();
     $(".item").remove();
     $(".itemImg").remove();
-    $(".price-2").val("$0");
-    $(".price-3").val("$0");
+    $(".price-2").text("$0");
+    $(".price-3").text("$0");
+    $(".price").text("$0");
+    $(".input-name").prop("disabled", true);
+    $(".continue").remove();
+    $(".overlap-group-1").remove();
+    $(".default").remove();
 }
 
 function selectedDelivery() {

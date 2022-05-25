@@ -3,10 +3,10 @@
 <script src="../js/index.js"></script>
 <div class="container">
 
-<%--    <div class="section-title" style="padding-bottom: 0;">--%>
-<%--        <span>${item.name}</span>--%>
-<%--        <h2>${item.name}</h2>--%>
-<%--    </div>--%>
+    <div class="section-title" style="padding-bottom: 0;">
+        <span>${item.name}</span>
+        <h2>${item.name}</h2>
+    </div>
 
     <div class="row" style="margin-left: 2%;">
         <div class="card" style="width: 45%;">
@@ -29,17 +29,11 @@
                     <a href="/cart/${item.id}/1">
                         <input type="submit"  class="button-addtocart" value="Add to Cart" >
                     </a>
-<%--                    <form id="thisone" action="cart" method="post">--%>
-<%--                        <input type="submit"  class="button-addtocart" value="Add to Cart" >--%>
-<%--                    </form>--%>
                 </div>
                 <div class="buygroup">
                     <a href="/checkout/${item.id}/1">
                         <input type="submit"  class="button-buynow"  value="Buy Now">
                     </a>
-<%--                    <form id="thistoo" action="checkout" method="post">--%>
-<%--                        <input type="submit"  class="button-buynow"  value="Buy Now" >--%>
-<%--                    </form>--%>
                 </div>
             </a>
         </div>

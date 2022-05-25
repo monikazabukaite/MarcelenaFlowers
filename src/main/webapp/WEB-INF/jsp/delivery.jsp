@@ -28,7 +28,7 @@
             </div>
             <div class="default">
                 <div class="overlap-group-0">
-                    <a href="/thank-you" style="color: #fff;">Continue</a>
+                    <a class="continue" href="/thank-you" style="color: #fff;">Continue</a>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
         <div class="flex-col-2">
             <div class="the-charlie playfairdisplay-semi-bold-black-20px item">${item.name}</div>
             <div class="quantity-1 playfairdisplay-normal-black-14px item">Quantity ${quantity}</div>
-            <div class="price valign-text-middle playfairdisplay-normal-black-20px item">$${item.price}</div>
+            <div class="price valign-text-middle playfairdisplay-normal-black-20px item">$${item.price * quantity}</div>
         </div>
         <div class="remove-container">
             <div class="remove playfairdisplay-normal-black-14px"><a>

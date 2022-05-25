@@ -35,7 +35,7 @@
             <div class="line-items">
                 <div class="order-line-item">
                     <div class="subtotal playfairdisplay-normal-woodsmoke-15px">Subtotal</div>
-                    <div class="price-2 playfairdisplay-normal-woodsmoke-15px">$${item.price}</div>
+                    <p class="price-2 playfairdisplay-normal-woodsmoke-15px">$${item.price * quantity}</p>
                 </div>
                 <div class="order-line-item">
                     <div class="subtotal-1 playfairdisplay-normal-woodsmoke-15px">Shipping</div>
@@ -44,13 +44,13 @@
                 <img class="line-7" src="line-7.svg"/>
                 <div class="order-line-item">
                     <div class="subtotal-2 playfairdisplay-semi-bold-woodsmoke-15px">Total</div>
-                    <div class="price-3 playfairdisplay-semi-bold-woodsmoke-15px">$${item.price}</div>
+                    <div class="price-3 playfairdisplay-semi-bold-woodsmoke-15px">$${item.price * quantity}</div>
                 </div>
             </div>
             <div class="default">
                 <div class="overlap-group-1">
                     <div class="button-text">
-                        <a href="/checkout/${item.id}/1" style="color: #fff;">Continue to Checkout</a>
+                        <a class="continue" href="/checkout/${item.id}/1" style="color: #fff;">Continue to Checkout</a>
                     </div>
                 </div>
             </div>
