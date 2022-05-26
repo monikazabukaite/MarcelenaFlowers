@@ -45,12 +45,22 @@ public class AbstractCommandLineRunner implements CommandLineRunner {
         itemService.add(new Item("hand-tied-bouquets", "The Ellen", "images/flower1.jpg", 49));
         itemService.add(new Item("hand-tied-bouquets", "The Gabrielle", "images/flower2.jpg", 59));
         itemService.add(new Item("hand-tied-bouquets", "The Abby", "images/flower3.jpg", 39));
-        itemService.add(new Item("spring-flowers", "The Jeanie", "images/flower4.jpg", 49));
+        itemService.add(new Item("hand-tied-bouquets", "The Jeanie", "images/flower4.jpg", 49));
 
-        itemService.add(new Item("dried-flowers", "The Harper", "images/flower5.jpg", 49));
-        itemService.add(new Item("spring-flowers", "The Grace", "images/flower6.jpg", 59));
-        itemService.add(new Item("dried-flowers", "The Camille", "images/flower7.jpg", 39));
-        itemService.add(new Item("spring-flowers", "The Caitlin", "images/flower8.jpg", 49));
+        itemService.add(new Item("hand-tied-bouquets", "The Harper", "images/flower5.jpg", 49));
+        itemService.add(new Item("hand-tied-bouquets", "The Grace", "images/flower6.jpg", 59));
+        itemService.add(new Item("hand-tied-bouquets", "The Camille", "images/flower7.jpg", 39));
+        itemService.add(new Item("hand-tied-bouquets", "The Caitlin", "images/flower8.jpg", 49));
+
+        itemService.add(new Item("flowers", "The Sophia", "images/flower9.jpg", 6));
+        itemService.add(new Item("flowers", "The Victoria", "images/flower10.jpg", 7));
+        itemService.add(new Item("flowers", "The Isabella", "images/flower11.jpg", 5));
+        itemService.add(new Item("flowers", "The Olivia", "images/flower12.jpg", 2));
+
+        itemService.add(new Item("home-interior-details", "The Ellie", "images/home1.jpg", 20));
+        itemService.add(new Item("home-interior-details", "The Angelina", "images/home2.jpg", 15));
+        itemService.add(new Item("home-interior-details", "The Samantha", "images/home3.jpg", 25));
+        itemService.add(new Item("home-interior-details", "The Sarah", "images/home4.jpg", 15));
 
         roleService.add(new Role(UserRole.USER));
         roleService.add(new Role(UserRole.ADMIN));

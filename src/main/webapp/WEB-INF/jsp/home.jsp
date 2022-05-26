@@ -15,13 +15,10 @@
                 bouqets</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link categories" href="/home/dried-flowers">Dried flowers</a>
+            <a class="nav-link categories" href="/home/flowers">Flowers</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link categories" href="/home/letterbox-flowers">Letterbox flowers</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link categories" href="/home/spring-flowers">Spring flowers</a>
+            <a class="nav-link categories" href="/home/home-interior-details">Home interior details</a>
         </li>
     </ul>
 
