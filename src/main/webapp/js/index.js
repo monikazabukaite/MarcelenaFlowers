@@ -11,8 +11,16 @@ $(document).ready(function() {
         removeItem();
     });
 
-    $(".input-delivery").click(function() {
-        selectedDelivery();
+    $(".button-delivery-1").click(function() {
+        selectedDelivery1();
+    });
+
+    $(".button-delivery-2").click(function() {
+        selectedDelivery2();
+    });
+
+    $(".button-delivery-3").click(function() {
+        selectedDelivery3();
     });
 });
 
@@ -43,7 +51,14 @@ function removeItem() {
     $(".default").remove();
 }
 
-function selectedDelivery() {
-    $(this).addClass("selected-delivery");
+function selectedDelivery1() {
+    $(".button-delivery-1").addClass("selected-delivery");
 }
 
+function selectedDelivery2() {
+    $(".button-delivery-2").addClass("selected-delivery");
+}
+
+function selectedDelivery3() {
+    $(".button-delivery-3").addClass("selected-delivery");
+}

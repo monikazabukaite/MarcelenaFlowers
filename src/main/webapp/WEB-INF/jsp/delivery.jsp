@@ -14,18 +14,21 @@
     </div>
     <div class="flex-row-2">
         <div class="flex-col-3">
-            <div class="input-delivery">
-                <div class="input-name playfairdisplay-semi-bold-woodsmoke-15px">Standard Delivery:</div>
-                <div class="input-name valign-text-middle">3-4 Business Days</div>
-            </div>
-            <div class="input-delivery">
-                <div class="input-name playfairdisplay-semi-bold-woodsmoke-15px">Next-Day Delivery:</div>
-                <div class="input-name valign-text-middle">Delivered between 7am and 10pm</div>
-            </div>
-            <div class="input-delivery">
-                <div class="input-name playfairdisplay-semi-bold-woodsmoke-15px">Nominated Day:</div>
-                <div class="input-name valign-text-middle">Choose a day that suits you</div>
-            </div>
+            <button class="button-delivery button-delivery-1" style="padding-right: 248px; padding-left: 22px;">
+                <span class="bold">Standard Delivery:</span>
+                </br>
+                <span>3-4 Business Days</span>
+            </button>
+            <button class="button-delivery button-delivery-2">
+                <span class="bold">Next-Day Delivery:</span>
+                </br>
+                <span>Delivered between 7am and 10pm</span>
+            </button>
+            <button class="button-delivery button-delivery-3">
+                <span class="bold">Nominated Day:</span>
+                </br>
+                <span>Choose a day that suits you</span>
+            </button>
             <div class="default">
                 <div class="overlap-group-0">
                     <a class="continue" href="/thank-you" style="color: #fff;">Continue</a>

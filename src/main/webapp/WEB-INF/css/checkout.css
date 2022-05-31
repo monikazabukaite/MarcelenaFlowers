@@ -633,6 +633,18 @@ select {
 }
 
 .selected-delivery {
-    background: #000;
-    color: #fff;
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.button-delivery {
+    background-color: #fff;
+    border: solid black 1px;
+    padding: 12px 244px 12px 23px;
+    margin-bottom: 8px;
+}
+
+.bold {
+    font-weight: 800;
+    font-family: "Playfair Display";
 }

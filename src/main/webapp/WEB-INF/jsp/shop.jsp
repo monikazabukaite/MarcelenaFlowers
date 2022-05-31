@@ -78,6 +78,20 @@
     </div>
 
     <div class="row" style="margin-left: 2%;">
+        <c:forEach begin="15" end="18" items="${itemsList}" var="item">
+            <div class="card col-md-3" style="width: 18rem;">
+                <a class="card-a" href="/item/${item.id}">
+                    <img src="${item.imgUrl}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${item.name}</h5>
+                        <p class="card-text">$${item.price}</p>
+                    </div>
+                </a>
+            </div>
+        </c:forEach>
+    </div>
+
+    <div class="row" style="margin-left: 2%;">
         <c:forEach begin="0" end="3" items="${filteredItemsList}" var="item">
             <div class="card col-md-3" style="width: 18rem;">
                 <a class="card-a" href="/item/${item.id}">
